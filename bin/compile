@@ -1,9 +1,11 @@
 #!/bin/sh
 
+mkdir -p $BUILD_DIR/.odbc
+
 echo "[FreeTDS]
 Description=FreeTDS Driver
 Driver=/app/.apt/usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so
 Setup=/app/.apt/usr/lib/x86_64-linux-gnu/odbc/libtdsS.so
-" > $HOME/.apt/etc/odbcinst.ini
+" > \$BUILD_DIR/etc/odbcinst.ini
 
-export ODBCSYSINI=/app/.apt/etc/
+export ODBCSYSINI=\$BUILD_DIR/etc/
